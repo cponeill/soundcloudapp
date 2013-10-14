@@ -3,6 +3,11 @@ SC.intialize({
     redirect_url: 'http://www.designingaround.us'
 });
 
+SC.connect(function() {
+  SC.get('/me', function(me) { 
+    alert('Hello, ' + me.username); 
+  });
+});
 
 $(document).ready(function() {
   $('a.connect').click(function(e) {
