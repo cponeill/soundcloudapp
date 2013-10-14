@@ -3,11 +3,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-        <script src="//connect.soundcloud.com/sdk.js"></script>
-        <script src="script.js"></script>
+    <script>
+      function geoFindMe() {
+        var output = document.getElementById("out");
+
+      if (!navigator.geolocation) {
+        output.innerHTML = "<p>Geolocation is not supported by your browswer</p>";
+        return;
+      }
+      
+      function success(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        output.innerHTML = "<p>Latitude is ' + laditude + '<br> longitude is '  + longitude + '</p>'";
+
+        var img = new Image();
+        img src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+        output.appendChild(img);
+      };
+
+      function error() {
+        output.innerHTML = "Unable to retrieve your location";
+      };
+
+      output.innerHTML = "<p>Locating...</p>";
+
+      navigator.geolocation.getCurrentPosition(success, error);
+      }
+
+      </script>
+
 	</head>
   <body>
-        <a href="#" class="connect">Connect with SoundCloud</a>
-        <p>Hello, your name is <span id="username"></span></p>
-	</body>
+    <p><button onclick="geoFindMe()">Show my location</button></p>
+    <div id="out"></div>
+  </body>
 </html>
