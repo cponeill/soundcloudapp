@@ -1,7 +1,7 @@
 var express = require("express");
 var fs = require("fs");
 var path = require("path");
-var htmlfile = "home.html";
+var htmlfile = "news.html";
 
 var app = express.createServer(express.logger());
 
