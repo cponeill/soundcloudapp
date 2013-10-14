@@ -45,7 +45,7 @@
 
 <script type="text/javascript">
 
-var apiKey = '1SZKGEEHOWNRCJ8SJ';
+var apiKey = 'NO_API_KEY';
 jQuery.ajaxSettings.traditional = true; 
 
 function fetchNews(artist, highRelevance) {
@@ -142,7 +142,7 @@ $(document).ready(function() {
     // hosted on The Echo Nest, otherwise it fetch an empty key
     fetchApiKey( function(api_key, isLoggedIn) {
         if (!api_key) {
-            api_key = 'MY_ECHO_NEST_API_KEY';
+            api_key = '1SZKGEEHOWNRCJ8SJ';
         }
         apiKey = api_key;
         $.ajaxSetup({ cache: false });
