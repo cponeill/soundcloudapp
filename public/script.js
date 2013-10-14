@@ -7,9 +7,9 @@ $(document).ready(function() {
   $('a.connect').click(function(e) {
     e.preventDefault();
     SC.connect(function() {
-        SC.get('/me', function(me) { 
-            alert('Hello, ' + me.username); 
-        });
+      SC.get('/me', function(me) {
+        $('#username').html(me.username);
+      });
     });
-    });
+  });
 });
